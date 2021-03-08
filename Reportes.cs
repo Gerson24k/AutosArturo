@@ -113,8 +113,16 @@ namespace AutosArturo
             dataGridView2.Refresh();
             //buscamos el valor mas alto;
             //s0lo ordenamos la lista
-            List<ALQUILER> sorted = Alquileres.OrderByDescending(x => x.KilometrosRecorridos).ToList();
-            label5.Text = sorted[0].KilometrosRecorridos.ToString();
+            if (Alquileres.Count <= 0)
+            {
+
+            }
+            else
+            {
+                List<ALQUILER> sorted = Alquileres.OrderByDescending(x => x.KilometrosRecorridos).ToList();
+                label5.Text = sorted[0].KilometrosRecorridos.ToString();
+            }
+            
 
         }
 
